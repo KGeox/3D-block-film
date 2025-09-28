@@ -1,0 +1,121 @@
+[gd_scene load_steps=18 format=3 uid="uid://d16tcwgxmww7i"]
+
+[ext_resource type="PackedScene" uid="uid://kvqim1fw3fyk" path="res://player/player.tscn" id="1_ocak7"]
+[ext_resource type="PackedScene" uid="uid://3blik4li4nor" path="res://player/gamer_L_R.tscn" id="2_0mpl3"]
+[ext_resource type="PackedScene" uid="uid://ddrmb3a1jfepk" path="res://player/gamer_2.tscn" id="3_bhd5m"]
+[ext_resource type="PackedScene" uid="uid://balovhxhnoubn" path="res://end_area.tscn" id="3_wrsrl"]
+[ext_resource type="PackedScene" uid="uid://dlwpdgbuveuoq" path="res://player/level_5.tscn" id="4_3nu57"]
+[ext_resource type="PackedScene" uid="uid://d30sok1esfqbw" path="res://player/gamer.tscn" id="4_wrsrl"]
+[ext_resource type="PackedScene" uid="uid://1rb2nhr0on6f" path="res://player/restart_area.tscn" id="6_w6s80"]
+
+[sub_resource type="Environment" id="Environment_agdxq"]
+background_mode = 1
+background_color = Color(0.78039217, 0.5568628, 0.91764706, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocak7"]
+albedo_color = Color(1, 1, 0.039215688, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6s80"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nu57"]
+albedo_color = Color(0.003921569, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xyfn3"]
+albedo_color = Color(0.003921569, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gln7o"]
+albedo_color = Color(0.039215688, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bltf8"]
+albedo_color = Color(0.011764706, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dunt5"]
+albedo_color = Color(0.015686275, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0mpl3"]
+size = Vector3(6, 4, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nu57"]
+size = Vector3(64, 5, 53)
+
+[node name="level4" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_agdxq")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -1, 0)
+use_collision = true
+size = Vector3(8, 3, 7)
+material = SubResource("StandardMaterial3D_ocak7")
+
+[node name="Player1" parent="." instance=ExtResource("1_ocak7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, -0.100000024)
+use_collision = true
+size = Vector3(7, 5, 6)
+material = SubResource("StandardMaterial3D_w6s80")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 0)
+use_collision = true
+size = Vector3(7, 5, 6)
+
+[node name="Gamer" parent="." instance=ExtResource("2_0mpl3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -13.4, 4.5, -7)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Gamer"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, -3.5, -31.4)
+use_collision = true
+size = Vector3(7, 5, 6)
+material = SubResource("StandardMaterial3D_3nu57")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Gamer"]
+transform = Transform3D(0.042296153, 0.047868688, 0.9979577, -0.009147157, 0.9988283, -0.047522765, -0.99906325, -0.007118452, 0.042684454, -1.0000014, -2.0005, -30.4)
+size = Vector3(7, 1, 6)
+material = SubResource("StandardMaterial3D_xyfn3")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Gamer"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.9999986, -4.5, -31.400002)
+size = Vector3(7, 5, 6)
+material = SubResource("StandardMaterial3D_gln7o")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Gamer"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.999998, -3.0005, -31.4)
+use_collision = true
+size = Vector3(7, 1, 6)
+material = SubResource("StandardMaterial3D_bltf8")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Gamer"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.999998, -3.5, -31.399998)
+use_collision = true
+size = Vector3(7, 5, 6)
+material = SubResource("StandardMaterial3D_dunt5")
+
+[node name="End Area" parent="." instance=ExtResource("3_wrsrl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
+next_level = ExtResource("4_3nu57")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="End Area"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -1.9659252, 1.758819, 0)
+shape = SubResource("BoxShape3D_0mpl3")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 1.5, 0)
+use_collision = true
+size = Vector3(4, 4, 181)
+
+[node name="Gamer2" parent="." instance=ExtResource("4_wrsrl")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 3, -2)
+
+[node name="Gamer_2" parent="." instance=ExtResource("3_bhd5m")]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -1, 2, 1)
+
+[node name="Restart Area" parent="." instance=ExtResource("6_w6s80")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Restart Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, -2, 4)
+shape = SubResource("BoxShape3D_3nu57")

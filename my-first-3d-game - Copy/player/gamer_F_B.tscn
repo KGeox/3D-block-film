@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bo38cbqvbd6b1"]
+
+[ext_resource type="Script" uid="uid://cr4k1stqw5c7b" path="res://player/gamer_f_b.gd" id="1_xrgpw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wfpvc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08oe0"]
+albedo_color = Color(0.99607843, 0.003921569, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mq7m6"]
+material = SubResource("StandardMaterial3D_08oe0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mq7m6"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_jyjod"]
+material = SubResource("StandardMaterial3D_mq7m6")
+radius = 0.2
+height = 0.4
+
+[node name="Gamer" type="CharacterBody3D"]
+script = ExtResource("1_xrgpw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_wfpvc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_mq7m6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9961947, -0.08715574, 0, 0.08715574, 0.9961947, 0, 0.5, -0.6)
+mesh = SubResource("SphereMesh_jyjod")

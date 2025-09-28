@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cdcbne4esdc42"]
+
+[ext_resource type="Texture2D" uid="uid://dgsdb1kqgyqa7" path="res://FBX format/Koala.jpg" id="1_v070j"]
+
+[resource]
+albedo_color = Color(0.89411765, 0.92156863, 0.96862745, 1)
+albedo_texture = ExtResource("1_v070j")
+uv1_triplanar = true

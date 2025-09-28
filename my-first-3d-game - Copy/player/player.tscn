@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://kvqim1fw3fyk"]
+
+[ext_resource type="PackedScene" uid="uid://chjrhhjvxun3r" path="res://player/simple_gun/gun_model.glb" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://b4xynw7l8btvq" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://cuyh8hew637ju" path="res://player/reticle.png" id="3_g1dw6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kqu6x"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kqu6x"]
+size = Vector3(0.1, 0.1, 1)
+
+[node name="Player1" type="CharacterBody3D"]
+script = ExtResource("1_rkbax")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0237396, 0)
+shape = SubResource("CapsuleShape3D_kqu6x")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.999811, 0.01944174, 3.9530418e-10, -0.019288138, 0.9919119, -0.12545449, -0.0024390537, 0.12543078, 0.9920994, -0.00830102, 1.5383353, -0.058409214)
+fov = 62.90487
+
+[node name="gun_model" parent="Camera3D" instance=ExtResource("1_oul6g")]
+unique_name_in_owner = true
+transform = Transform3D(-0.62346774, -0.008319916, 0.109855056, -0.008800052, 0.6253207, -0.0009437434, -0.11988233, -0.002633045, -0.57124996, 0.8799199, -0.24428594, -1.0674858)
+
+[node name="Marker3D" type="Marker3D" parent="Camera3D"]
+unique_name_in_owner = true
+transform = Transform3D(0.9999867, 0.0006623295, -0.005031897, 0.00066233333, 0.96593827, 0.25877017, 0.005031891, -0.25876993, 0.9659257, 0.933166, -0.20854998, -1.5282662)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.029197, 0)
+mesh = SubResource("CapsuleMesh_kqu6x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04132557, 1.5833588, -0.5080689)
+visible = false
+mesh = SubResource("BoxMesh_kqu6x")
+
+[node name="Reticle" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_g1dw6")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.2
+one_shot = true
+
+[node name="gun sound" type="AudioStreamPlayer3D" parent="."]

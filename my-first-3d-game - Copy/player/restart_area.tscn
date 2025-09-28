@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1rb2nhr0on6f"]
+
+[ext_resource type="Script" uid="uid://0wf8qy4i8hs" path="res://restart_area.gd" id="1_pm3ou"]
+
+[node name="Restart Area" type="Area3D"]
+script = ExtResource("1_pm3ou")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

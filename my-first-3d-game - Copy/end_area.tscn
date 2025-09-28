@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://balovhxhnoubn"]
+
+[ext_resource type="Script" uid="uid://cuvfgiehkvpa6" path="res://end_area.gd" id="1_i4gnt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_moeu4"]
+size = Vector3(13, 3, 13)
+
+[node name="End Area" type="Area3D"]
+script = ExtResource("1_i4gnt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_moeu4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

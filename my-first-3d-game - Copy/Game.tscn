@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=3 uid="uid://dwchgkysw2p8c"]
+
+[ext_resource type="Script" uid="uid://fpri2ylu8x74" path="res://game.gd" id="1_3mrqo"]
+[ext_resource type="Material" uid="uid://cdcbne4esdc42" path="res://level/platform.tres" id="1_u44n3"]
+[ext_resource type="PackedScene" uid="uid://kvqim1fw3fyk" path="res://player/player.tscn" id="1_wbfu4"]
+[ext_resource type="Material" uid="uid://benwppbh5dbxi" path="res://level/bridge.tres" id="2_sb48q"]
+[ext_resource type="PackedScene" uid="uid://d30sok1esfqbw" path="res://player/gamer.tscn" id="5_t88pq"]
+[ext_resource type="PackedScene" uid="uid://balovhxhnoubn" path="res://end_area.tscn" id="6_r0x5m"]
+[ext_resource type="PackedScene" uid="uid://bqwukdoclo6yd" path="res://player/level2.tscn" id="7_3mrqo"]
+[ext_resource type="PackedScene" uid="uid://1rb2nhr0on6f" path="res://player/restart_area.tscn" id="8_joorw"]
+
+[sub_resource type="Environment" id="Environment_t88pq"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.81645644, 0.7150599, 0.5345989, 1)
+tonemap_mode = 2
+tonemap_exposure = 1.33
+fog_enabled = true
+fog_light_color = Color(0.21960784, 0.49803922, 0.6784314, 1)
+fog_height = 5.0
+fog_height_density = 0.7697
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2vekm"]
+size = Vector3(162, 1, 145)
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_3mrqo")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 4.2, 2.5)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = ExtResource("1_u44n3")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 4.2, 2.5)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = ExtResource("1_u44n3")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 4.2, 2.5)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = ExtResource("1_u44n3")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(0.99211806, -0.049453393, 0.11513484, 0.051477164, 0.99856645, -0.0146690905, -0.11424435, 0.020480298, 0.99324155, 8.519371, 7.8603477, 3.802966)
+use_collision = true
+size = Vector3(5, 3, 5)
+material = ExtResource("2_sb48q")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 7, 1)
+size = Vector3(5, 3, 5)
+material = ExtResource("2_sb48q")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 6, -9.5)
+use_collision = true
+size = Vector3(5, 3, 6)
+material = ExtResource("2_sb48q")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 7, -14.5)
+use_collision = true
+size = Vector3(5, 3, 6)
+material = ExtResource("2_sb48q")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, -6.5)
+use_collision = true
+size = Vector3(5, 3, 6)
+material = ExtResource("2_sb48q")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(0.9995862, 0.024036096, -0.015803615, -0.024210151, 0.99964744, -0.010916822, 0.015535647, 0.011294909, 0.9998156, 21, 6, -5.5)
+use_collision = true
+size = Vector3(5, 3, 6)
+material = ExtResource("2_sb48q")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 4.2, 2.5)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = ExtResource("1_u44n3")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5, 6.5, -2)
+use_collision = true
+size = Vector3(13, 3, 10)
+material = ExtResource("1_u44n3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8.5, -15)
+use_collision = true
+size = Vector3(10, 3, 10)
+material = ExtResource("1_u44n3")
+
+[node name="Player" parent="." instance=ExtResource("1_wbfu4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 9, 1)
+speed = 5.0
+jump_force = 6.0
+gravity = 9.8
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 17, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t88pq")
+
+[node name="Gamer" parent="." instance=ExtResource("5_t88pq")]
+transform = Transform3D(-5.9604645e-08, 0, -1, 0, 1, 0, 1, 0, -5.9604645e-08, 0, 12, 0)
+
+[node name="End Area" parent="." instance=ExtResource("6_r0x5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 7, -2)
+next_level = ExtResource("7_3mrqo")
+
+[node name="Restart Area" parent="." instance=ExtResource("8_joorw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1.331481, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Restart Area"]
+shape = SubResource("BoxShape3D_2vekm")
+debug_color = Color(0.69411767, 0.07058824, 0.21960784, 0.41960785)
